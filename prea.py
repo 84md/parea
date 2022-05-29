@@ -26,26 +26,26 @@ def circum(vec):
 
 
 # Polygonal area with shoelace/trapezoid formula
-def poly_area(vec):
+def poly_area(pnt):
 
     a = 0.00
     b = 0.00
-    for i in range(len(vec)):
-        if i == len(vec)-1:
-            a += vec[i].x * vec[0].y
-            b += vec[i].y * vec[0].x
+    for i in range(len(pnt)):
+        if i == len(pnt)-1:
+            a += pnt[i].x * pnt[0].y
+            b += pnt[i].y * pnt[0].x
             break
         else:
-            a += vec[i].x * vec[i+1].y
-            b += vec[i].y * vec[i+1].x
+            a += pnt[i].x * pnt[i+1].y
+            b += pnt[i].y * pnt[i+1].x
     bet = a - b
     return abs((1/2) * bet)
 
 
-def verbose_output(vectors):
-    a = circum(vectors)
+def verbose_output(pnts):
+    a = circum(pnts)
     print("\n")
-    print("Area: \t\t%.3f m²\n" % poly_area(vectors))
+    print("Area: \t\t%.3f m²\n" % poly_area(pnts))
     for i in range(len(a)):
         print("Distance", i, "\t\t %.3f m" % a[i])
 
@@ -73,18 +73,18 @@ def main():
         k = sys.stdin.read()
         v = k.split()
 
-    vectors = []
+    points = []
     for i in range(len(v)):
         sp = v[i].split(",")
         try:
-            vectors.append(Vecs(x=float(sp[0]), y=float(sp[1])))
+            points.append(Vecs(x=float(sp[0]), y=float(sp[1])))
         except ValueError:
             print("Input Error, make sure coordinates are correct")
             exit()
     if args.v:
-        verbose_output(vectors)
+        verbose_output(points)
     else:
-        print("%.3f" % poly_area(vectors))
+        print("%.3f" % poly_area(points))
 
 
 main()
