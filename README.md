@@ -6,7 +6,7 @@ vector length and total circumference
 
 usage: prea.py [-h] [-v] [Coordinates ...]
 
-calculate the area of a simple polygon
+Calculate the area of a simple polygon
 
 positional arguments:
   Coordinates  Coordinates in Format x,y whitespace delimiter
