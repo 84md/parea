@@ -17,7 +17,4 @@ options:
 
 
 calculate the area of a simple polygon, with the shoelace formula
-https://en.wikipedia.org/wiki/Shoelace_formula
-https://de.wikipedia.org/wiki/Gau%C3%9Fsche_Trapezformel
-
 
