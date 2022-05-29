@@ -76,7 +76,11 @@ def main():
     vectors = []
     for i in range(len(v)):
         sp = v[i].split(",")
-        vectors.append(Vecs(x=float(sp[0]), y=float(sp[1])))
+        try:
+            vectors.append(Vecs(x=float(sp[0]), y=float(sp[1])))
+        except ValueError:
+            print("Input Error, make sure coordinates are correct")
+            exit()
     if args.v:
         verbose_output(vectors)
     else:
